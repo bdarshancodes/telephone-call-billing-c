@@ -1,0 +1,56 @@
+//telephone-call-billing-c
+#include<stdio.h>
+void main(){
+    int time;
+    int call_time;
+    float call_disc;
+    float gross;
+    float tax;
+    float final;
+
+    printf("\n enter the call arrival time between 0-24:");
+    scanf("%d",&time);
+
+    printf("\n enter the call time in minutes:");
+    scanf("%d",&call_time);
+
+
+    if(time>=18 && time<=8){
+        if(call_time>60){
+            gross=call_time*0.40;
+            call_disc=call_time*0.14;
+            tax=call_disc*0.04;
+            final=call_disc+tax;
+            printf("\n Your gross bill amount is:%f rs",gross);
+            printf("\n Your final bill amount after taxes is :%f rs",final);
+        }
+        else{
+            gross=call_time*0.40;
+            printf("\n Your gross bill amount is :%f rs",gross);
+            call_disc=call_time*0.20;
+            tax=call_disc*0.04;
+            final=call_disc+tax;
+            printf("\n Your final bill amount after taxes  is:%f",final);
+        }
+
+    }
+    else{
+        if(call_time>60){
+            gross=call_time*0.40;
+            printf("\n Your gross  bill amount is :%f",gross);
+            call_disc=call_time*0.34;
+            tax=call_disc*0.04;
+            final=call_disc+tax;
+            printf("\n Your final bill amount after taxes is:%f",final);
+
+        }
+        else{
+            gross=call_time*0.40;
+            printf("\n Your gross  bill amount is :%f",gross);
+            tax=gross*0.04;
+            final=gross+tax;
+            printf("\n Your final bill amount after taxes is :%frs",final );
+        }
+    }
+    
+}
